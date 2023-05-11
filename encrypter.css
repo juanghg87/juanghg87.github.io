@@ -1,0 +1,560 @@
+body{
+	background: #1D4350;
+}
+.titleContainer{
+	display: block;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	width: 300px;
+	height: 40px;
+	font-size: 35px;
+	line-height: 48px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	margin-top: 30px;
+	overflow: hidden;
+	
+}
+ul.ul-encrypter{
+	animation: rotation 5s infinite;
+	list-style: none;
+	padding-left: 10px;
+	margin: 0;
+	text-align: center;
+	
+}
+li#one{
+	color: white;
+	opacity: 0.6;
+}
+li#two{
+	color: #199281;
+	opacity: 0.7;
+}
+@keyframes rotation {
+	0%{
+		margin-top: -5px;
+	}
+	25%{
+		margin-top: -5px;
+	}
+	50%{
+		margin-top: -55px;
+	}
+	75%{
+		margin-top: -55px;
+	}
+	100%{
+		margin-top: -5px;
+	}
+}
+
+div{
+    display: flex;
+}
+button{
+    height: 50px;
+	color: white;
+    width: 150px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color:#1D4350;
+    border: solid 0px;
+	transition: all 0.3s;
+	position: relative;
+}
+button span #encrypterBtn,  button span #decryptorBtn{
+	transition: all 0.3s;
+    z-index: -1;
+    color: white ;
+}
+button::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: white;
+	border-bottom-color: white;
+	transform: scale(0.1, 1);
+}
+button:hover span {
+	letter-spacing: 3px;
+    color: white;
+}
+
+button:hover::before {
+	opacity: 1;	
+	transform: scale(1, 1);
+}
+button::after {
+	content: '';
+    color: white;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color: #285c6d73;
+    opacity: 1;
+}
+button:hover::after {
+	opacity: 0;	
+	transform: scale(0.1, 1);
+}
+
+textarea{
+    background-color: #285c6d73;
+    height: 300px;
+    color: white;
+    line-height: 100%;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    text-align: center;
+    transition: all 0.5s;
+    border-radius: 5px;
+    border: 0px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    opacity: 0.7;
+    letter-spacing: 3px;
+}
+textarea::placeholder {
+	text-align: center;
+	line-height: normal;
+	vertical-align: bottom;
+  }
+::placeholder{
+    color: white;
+    text-align: center;
+    transition: all 0.1s;
+}
+
+ textarea:hover{
+    transition: all 0.1s;
+    font-size: 22px;
+    opacity: 1;
+    letter-spacing: 0px;
+    background-color: #1D4350;
+    border-left: .8px solid white;
+    border-right: .8px solid white;
+    border-top: 0px;
+    border-bottom: 0px;
+} 
+
+button.swal-button.swal-button--confirm::after{
+    border-radius: 5px;
+}
+button.swal-button.swal-button--confirm{
+    margin-left: 50px;
+}
+div.swal-footer{
+    align-items: center;
+    display: flex;
+    text-align: center;
+    margin-right: auto;
+}
+.swal-modal{
+    background-color:#135b85;
+}
+.swal-title{
+    color: white;
+}
+div.swal-text{
+    color: white;
+}
+div.swal-overlay.swal-overlay--show-modal{
+    height: 400px;
+    width: 300px;
+    margin: auto;
+    border-radius: 30px;
+}
+div.swal-overlay.swal-overlay--show-modal{
+    background-color:#135b85;
+}
+
+
+div#btnCopiar{
+    width: 100%;
+    height: 50px;
+}
+.copiar::before, .copiar::after {
+	position: absolute;
+	content: '';
+	transition: all 0.1s;
+}
+.copiar {
+	display: inline-block;
+	padding: 10px 30px;
+    border-radius: 5px;
+	color: white;
+	position: absolute;
+	left: 81%;
+    top: 70%;
+	transform: translate(-50%, -50%);
+	vertical-align: middle;
+	font-family: 'Rubik One', sans-serif;
+	text-decoration: none;
+	font-size: 2vw;
+	transition: all 0.1s;
+	background-color: #135b8b;
+    cursor: pointer;
+}
+.copiar::before {
+	bottom: -15px;
+	height: 15px;
+	width: 100%;
+	left: 8px;
+	transform: skewX(45deg);
+	background-color: #196090;
+}
+.copiar::after {
+	right: -15px;
+	height: 100%;
+	width: 15px;
+	bottom: -8px;
+	transform: skewY(45deg);
+	background-color: #124364;
+}
+.copiar:active {
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.copiar:active::before {
+	bottom: -5px;
+	height: 5px;
+	left: 3px;
+}
+.copiar:active::after {
+	right: -5px;
+	width: 5px;
+	bottom: -3px;
+}
+
+
+div#btnCopiar2{
+    width: 100%;
+    height: 50px;
+}
+.copiar2::before, .copiar2::after {
+	position: absolute;
+	content: '';
+	transition: all 0.1s;
+}
+.copiar2 {
+	display: inline-block;
+	padding: 10px 30px;
+    border-radius: 5px;
+	color: white;
+	position: absolute;
+	left: 18%;
+    top: 70%;
+	transform: translate(-50%, -50%);
+	vertical-align: middle;
+	font-family: 'Rubik One', sans-serif;
+	text-decoration: none;
+	font-size: 2vw;
+	transition: all 0.1s;
+	background-color: #135b8b;
+    cursor: pointer; 
+}
+.copiar2::before {
+	bottom: -15px;
+	height: 15px;
+	width: 100%;
+	left: 8px;
+	transform: skewX(45deg);
+	background-color: #196090;
+}
+.copiar2::after {
+	right: -15px;
+	height: 100%;
+	width: 15px;
+	bottom: -8px;
+	transform: skewY(45deg);
+	background-color: #124364;
+}
+.copiar2:active {
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.copiar2:active::before {
+	bottom: -5px;
+	height: 5px;
+	left: 3px;
+}
+.copiar2:active::after {
+	right: -5px;
+	width: 5px;
+	bottom: -3px;
+}
+
+footer{
+	height: 40px;
+	position: relative;
+	top: 100px;
+	bottom: 0;
+	left: 0;
+	padding: 0.5rem;
+	background-color: #135b85;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	border-radius: 5px;
+}
+.logo{
+	height: 40px;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	border-radius: 5px;
+}
+.social-icons-container, .footer-menu-container{
+	display: flex;
+	margin: 1rem;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.social-icon{
+	height: 50px;
+	width: 50px;
+	border-radius: 50px;
+	background-image: url(images/linkedin.png);
+	background-position: center;
+	background-size: 40px;
+	background-repeat: no-repeat;
+	margin: 0.1rem;
+}
+.social-icon:hover{
+	background-color: black;
+	filter: invert(1);
+	opacity: 0.3;
+}
+.social-icon:nth-of-type(2){
+	background-image: url(images/whatsapp.png);
+}
+.social-icon:nth-of-type(3){
+	background-image: url(images/email.png);
+}
+.footer-menu-container{
+	list-style-type: none;
+	color: white;
+	font-size: 18px;
+}
+.menu-item{
+	margin: 1rem 1.2rem;
+	cursor: pointer;
+	opacity: 0.6;
+	text-align: center;
+}
+.menu-item:hover{
+	opacity: 0.1;
+}
+.copyrigth{
+	color: white;
+	opacity: 0.3;
+	text-align: center;
+	margin-right: 0;
+}
+a#tks{
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	margin: 2rem;
+}
+ul.footer-menu-container{
+	margin: 0;
+}
+@media (max-width: 1280px) {
+
+	textarea{
+		width: 30%;
+		height: 500px;
+	}
+	.copiar2, .copiar{
+		top: 70%
+	}
+	footer{
+		top: 55px;
+	}
+}
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+	
+	textarea{
+		width: 30%;
+		height: 60vh;
+	}
+	.copiar2, .copiar{
+		top: 80%;
+	}
+	.social-icons-container, .footer-menu-container{
+		display: contents;
+	}
+	a#tks{
+		margin: 0rem;
+	}
+	.copyrigth{
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 1024px){
+	textarea{
+		height: 300px;
+	}
+	.copiar2, .copiar{
+		top: 70%
+	}
+	.social-icons-container, .footer-menu-container{
+		display: contents;
+	}
+	.social-icon{
+		width: 40px;
+		height: 40px;
+		background-size: 30px;
+	}
+	a#tks{
+		margin: 0rem;
+	}
+	.copyrigth{
+		font-size: 10px;
+	}
+	footer{
+		top: 150px
+	}
+}
+
+@media (max-width: 768px){
+	footer{
+		display: flex;
+		margin-bottom: 200px;
+		flex-direction: column;
+		margin: auto;
+		width: 75%;
+		height: 23%;
+		top: 63px;
+	}
+	.social-icons-container {
+		display: flex;
+		flex-direction: row;
+		margin: 0px;
+	}
+	.logo{
+		margin: 0px;
+	}
+	.menu-item{
+		margin: auto;
+	}
+	textarea::placeholder{
+		font-size: 15px;
+	}
+	.copiar, .copiar2{
+		top: 63%;
+	}
+}
+@media (max-width: 480px){
+	footer{
+		display: flex;
+		margin-bottom: 500px;
+		flex-direction: column;
+		margin: auto;
+		width: 75%;
+		height: 33%;
+		top: -33px;
+	}
+	.social-icons-container {
+		display: flex;
+		flex-direction: row;
+	  }
+	img.logo{
+		margin: 0;
+	}
+	.social-icons-container{
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	a.social-icon{
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+	.copyrigth{
+		font-size: 10px;
+	}
+	.menu-item{
+		margin: 2px;
+	}
+	div#div-textarea{
+		display: flex;
+		flex-direction: column;
+	}
+	div#div-textarea{
+		align-items: center;
+	}
+	textarea{
+		height: 200px;
+    	width: 85%;
+		margin-top: 100px;
+		margin-bottom: 50px;
+	}
+	textarea::placeholder {
+		text-align: center;
+		line-height: 35vh;
+		vertical-align: middle;
+		font-size: 28px;
+	  }
+	#resultado{
+		margin-top: 50px;
+	}
+	#decryptorBtn{
+		align-items: center;
+	}
+	button#encrypterBtn, button#decryptorBtn{
+		width: 35%;
+		margin: 15px;
+	}
+	button#encrypterBtn{
+		margin-top: 40px;
+	}
+	.copiar2{
+		top: 52%;
+		left: 50%;
+		font-size: 3vh;
+	}
+	.copiar{
+		top: 84%;
+		left: 50%;
+		font-size: 3vh;
+	}
+	#resultado{
+		margin-top: 98px;
+	}
+	textarea::placeholder {
+		text-align: center;
+		line-height: 100%;
+	}
+	a.social-icon{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
